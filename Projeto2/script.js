@@ -10,5 +10,5 @@ function show(){
 
 var input3 = document.getElementById();
 function gerenciaDivs(){
-    if()
+    //if()
 }
