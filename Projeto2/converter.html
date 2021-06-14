@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js" async></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="pagina">
+        <h1>Escolha uma opção:</h1>
+        <input type="radio" name="option" value="opt1" id="opt1" onclick="gerenciaDivs()">
+        <label for="opt1">Compare texts</label>
+        <input type="radio" name="option" value="opt2" id="opt2" onclick="gerenciaDivs()">
+        <label for="opt2">Check length</label>
+        <div id="Compare">
+            <div>
+                <p>Ignorar maiúsculas</p>
+                <input type="radio" name="ignore" value="sim" id="sim" onclick="hide()">
+                <label for="sim">Sim</label>
+                <input type="radio" name="ignore" value="nao" id="nao" onclick="show()">
+                <label for="nao">Não</label>
+            </div>
+            <textarea id="input1"></textarea>
+            <textarea id="input2"></textarea>
+            <button>Limpar</button>
+            <p id="statusCompare"></p>
+        </div>
+        <div id="Check" hidden>
+            <p>Check length</p>
+            <p>Digite o tamanho máximo do texto</p>
+            <input type="number">
+            <p>ENTRADA</p>
+            <textarea id="input3"></textarea>
+            <p>Tamanho do texto: </p>
+            <p id="statusLength"></p>
+            <p>Tamanho do texto sem espaços: </p>
+            <button>Limpar</button>
+            <div id="output">
+                <p>Saída</p>
+                <div id="form1">
+                    <input type="radio" name="formOut" value="opt1" id="outOpt1" onclick="hide()">
+                    <label for="outOpt1">None</label>
+                    <input type="radio" name="formOut" value="opt2" id="outOpt2" onclick="show()">
+                    <label for="outOpt2">MAIÚSCULAS</label>
+                    <input type="radio" name="formOut" value="opt3" id="outOpt3" onclick="hide()">
+                    <label for="outOpt3">minusculas</label>
+                    <input type="radio" name="formOut" value="opt4" id="outOpt4" onclick="show()">
+                    <label for="outOpt4">Capitalizar</label>
+                </div>
+                <textarea readonly></textarea>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
