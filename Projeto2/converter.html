@@ -4,53 +4,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Converter</title>
     <script src="./script.js" async></script>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <!-- <button id="theme" onclick="changeTheme()"></button> -->
     <div id="pagina">
         <h1>Escolha uma opção:</h1>
-        <input type="radio" name="option" value="opt1" id="opt1" onclick="gerenciaDivs()">
-        <label for="opt1">Compare texts</label>
-        <input type="radio" name="option" value="opt2" id="opt2" onclick="gerenciaDivs()">
-        <label for="opt2">Check length</label>
-        <div id="Compare">
-            <div>
-                <p>Ignorar maiúsculas</p>
-                <input type="radio" name="ignore" value="sim" id="sim" onclick="hide()">
-                <label for="sim">Sim</label>
-                <input type="radio" name="ignore" value="nao" id="nao" onclick="show()">
-                <label for="nao">Não</label>
+        <div id="divOptions">
+            <div id="divCompare">
+                <input type="radio" name="option" value="optCompare" id="optCompare" onclick="gerenciaDivs()">
+                <label for="opt1">Comparar textos</label>
+                <input type="checkbox" name="ignore" value="ignoreCase" id="ignoreCase" onclick="statusComparar()" disabled>
+                <label for="ignoreCase">Ignorar maiusculas</label>
             </div>
-            <textarea id="input1"></textarea>
-            <textarea id="input2"></textarea>
-            <button>Limpar</button>
+            <div id="divTamanho">
+                <input type="radio" name="option" value="optCheck" id="optCheck" onclick="gerenciaDivs()">
+                <label for="opt2">Checar tamanho</label>
+                <input type="checkbox" name="option" value="hasOutput" id="hasOutput" onclick="gerenciaDivs()" disabled>
+                <label for="hasOutput">Possui saida?</label>
+            </div>
+        </div>
+        <div id="Compare" hidden>
+            <hr class="separator">
+            <h3>Comparador de textos</h3>
+            <div id="quest1">
+                <textarea id="input1" oninput="statusComparar()"></textarea>
+                <textarea id="input2" oninput="statusComparar()"></textarea>
+            </div>
+            <br>
+            <button onclick="limpar1()">Limpar</button>
             <p id="statusCompare"></p>
         </div>
         <div id="Check" hidden>
-            <p>Check length</p>
-            <p>Digite o tamanho máximo do texto</p>
-            <input type="number">
+            <hr class="separator">
+            <h3>Verificador de tamanho</h3>
+            <p>Digite o tamanho máximo do texto (max: 100.000)</p>
+            <input type="number" id="inputNumber" oninput="maxTamanho()">
             <p>ENTRADA</p>
-            <textarea id="input3"></textarea>
-            <p>Tamanho do texto: </p>
+            <textarea id="input3" oninput="retornaTamanho()"></textarea>
+            <br>
+            <button onclick="limpar2()">Limpar</button>
             <p id="statusLength"></p>
-            <p>Tamanho do texto sem espaços: </p>
-            <button>Limpar</button>
-            <div id="output">
+            <p id="totalLength">Tamanho do texto: 0 caracteres</p>
+            <p id="spacelessLength">Tamanho do texto sem espaços: 0 caracteres</p>
+            <div id="Output">
                 <p>Saída</p>
                 <div id="form1">
-                    <input type="radio" name="formOut" value="opt1" id="outOpt1" onclick="hide()">
-                    <label for="outOpt1">None</label>
-                    <input type="radio" name="formOut" value="opt2" id="outOpt2" onclick="show()">
+                    <input type="radio" name="formOut" value="opt1" id="outOpt1" onclick="transformaTexto()" checked>
+                    <label for="outOpt1">Nenhuma</label>
+                    <input type="radio" name="formOut" value="opt2" id="outOpt2" onclick="transformaTexto()">
                     <label for="outOpt2">MAIÚSCULAS</label>
-                    <input type="radio" name="formOut" value="opt3" id="outOpt3" onclick="hide()">
+                    <input type="radio" name="formOut" value="opt3" id="outOpt3" onclick="transformaTexto()">
                     <label for="outOpt3">minusculas</label>
-                    <input type="radio" name="formOut" value="opt4" id="outOpt4" onclick="show()">
+                    <input type="radio" name="formOut" value="opt4" id="outOpt4" onclick="transformaTexto()">
                     <label for="outOpt4">Capitalizar</label>
                 </div>
-                <textarea readonly></textarea>
+                <textarea id="outputText" readonly></textarea>
+                <!--<button onclick="transformaTexto()">Atualizar</button>-->
             </div>
         </div>
         
