@@ -1,0 +1,33 @@
+<div id="medicamentos">
+        <div id="CadBusca">
+            <button onclick="window.location.href='/registrations/medicine/create'">Cadastrar medicamento</button>
+            <button>Buscar medicamento</button>
+        </div>
+        <div id="tabela">
+        <table>
+            <caption>Tabela de medicamentos</caption>
+            <tr id="tableHeaderRow">
+                <th class="tableHeader">Código</th>
+                <th class="tableHeader">Principio Ativo</th>
+                <th class="tableHeader">CNPJ</th>
+                <th class="tableHeader">Laboratório</th>
+                <th class="tableHeader">Registro</th>
+                <th class="tableHeader">Produto</th>
+                <th class="tableHeader">Apresentação</th>
+                <th class="tableHeader">Classe Terapêutica</th>
+            </tr>
+            {{#each medicamentos}}
+            <tr class="trData" onclick="">
+                <td>{{dataValues.Código}}</td>
+                <td>{{dataValues.PrincípioAtivo}}</td>
+                <td>{{dataValues.CNPJ}}</td>
+                <td>{{dataValues.Laboratório}}</td>
+                <td>{{dataValues.Registro}}</td>
+                <td>{{dataValues.Produto}}</td>
+                <td>{{dataValues.Apresentação}}</td>
+                <td>{{dataValues.ClasseTerapêutica}}</td>
+            </tr>
+            {{/each}}
+        </table>
+        </div>
+    </div>

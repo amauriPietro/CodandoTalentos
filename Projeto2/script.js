@@ -27,7 +27,7 @@ function transformaTexto(){
     else if(document.getElementById('outOpt3').checked === true)
         output.value = texto.toLowerCase();
     else{
-        var novoTexto = " ";
+        var novoTexto = "";
         for(const i of texto){
             if(novoTexto.charAt(novoTexto.length - 1) === ' '){
                 novoTexto += i.toUpperCase();
@@ -35,7 +35,7 @@ function transformaTexto(){
             else
                 novoTexto += i.toLowerCase();
         }
-        output.value = novoTexto.substring(1, novoTexto.length);
+        output.value = novoTexto.substring(0, novoTexto.length);
     }
         
 }
