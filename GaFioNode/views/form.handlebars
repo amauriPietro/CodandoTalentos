@@ -1,19 +1,29 @@
-<form action="/registrations/medicine/add" method="POST">
-    <p>EAN</p>
-    <input type="text" name="EAN">
-    <p>CNPJ</p>
-    <input type="text" name="CNPJ">
-    <p>Princípio Ativo</p>
-    <input type="text" name="Princ">
-    <p>Registro</p>
-    <input type="text" name="Reg">
-    <p>Laboratório</p>
-    <input type="text" name="Lab">
-    <p>Produto</p>
-    <input type="text" name="Prod">
-    <p>Apresentação</p>
-    <input type="text" name="Apr">
-    <p>Classe Terapêutica</p>
-    <input type="text" name="Clas">
-    <button type="submit">Cadastrar medicamento</button>
-</form>
+<div id="formulario">
+    <h2>Criar cadastro</h2>
+    <form id="medForm" action="/registrations/medicine/add" method="POST" style="width: 100%;" oninput="verificaPadrao()">
+        <div id="eancnpj">
+            <div style="width: 100%;">
+                <p>EAN</p>
+                <input id="EAN" type="text" name="EAN" style="width: 80%;" class="textInput" oninput="autoEAN()" placeholder="EAN">
+            </div>
+            <div style="width: 100%;">
+                <p>CNPJ</p>
+                <input type="text" name="CNPJ" id="CNPJ" oninput="autoCNPJ()" class="textInput" style="width: 80%;" placeholder="CNPJ">
+            </div>
+        </div>
+        <p>Princípio Ativo</p>
+        <input type="text" name="Princ" class="textInput" placeholder="Princípio Ativo">
+        <p>Registro</p>
+        <input type="text" name="Reg" class="textInput" placeholder="Registro">
+        <p>Laboratório</p>
+        <input type="text" name="Lab" class="textInput" placeholder="Laboratório">
+        <p>Produto</p>
+        <input type="text" name="Prod" class="textInput" placeholder="Produto">
+        <p>Apresentação</p>
+        <input type="text" name="Apr" class="textInput" placeholder="Apresentação">
+        <p>Classe Terapêutica</p>
+        <input type="text" name="Clas" class="textInput" placeholder="Classe Terapêutica">
+        <br><br><br>
+        <button id="btnCadastro" type="submit">Cadastrar</button>
+    </form>
+</div>

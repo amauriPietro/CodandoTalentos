@@ -1,0 +1,29 @@
+<div id="formulario">
+    <h2>Atualizar cadastro</h2>
+    <form id="medForm" action="/registrations/medicine/update" method="POST" style="width: 100%;" oninput="verificaPadrao()">
+        <div id="eancnpj">
+            <div style="width: 100%;">
+                <p>EAN</p>
+                <input id="EAN" type="text" name="EAN" style="width: 80%;" class="textInput" oninput="autoEAN()" readonly " value="{{medicamento.Código}}">
+            </div>
+            <div style="width: 100%;">
+                <p>CNPJ</p>
+                <input type="text" name="CNPJ" id="CNPJ" oninput="autoCNPJ()" class="textInput" style="width: 80%;" placeholder="CNPJ" value="{{medicamento.CNPJ}}">
+            </div>
+        </div>
+        <p>Princípio Ativo</p>
+        <input type="text" name="Princ" class="textInput" placeholder="Princípio Ativo" value="{{medicamento.PrincípioAtivo}}">
+        <p>Registro</p>
+        <input type="text" name="Reg" class="textInput" placeholder="Registro" value="{{medicamento.Registro}}">
+        <p>Laboratório</p>
+        <input type="text" name="Lab" class="textInput" placeholder="Laboratório" value="{{medicamento.Produto}}">
+        <p>Produto</p>
+        <input type="text" name="Prod" class="textInput" placeholder="Produto" value="{{medicamento.Produto}}">
+        <p>Apresentação</p>
+        <input type="text" name="Apr" class="textInput" placeholder="Apresentação" value="{{medicamento.Apresentação}}">
+        <p>Classe Terapêutica</p>
+        <input type="text" name="Clas" class="textInput" placeholder="Classe Terapêutica" value="{{medicamento.ClasseTerapêutica}}">
+        <br><br><br>
+        <button id="btnCadastro" type="submit">Atualizar</button>
+    </form>
+</div>

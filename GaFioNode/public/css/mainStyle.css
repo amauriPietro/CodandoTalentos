@@ -1,0 +1,87 @@
+/* css do cabeçalho */
+#header{
+    display: flex;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, #566275, #aeccfc);
+    max-height: 5.5rem;
+}
+
+#gafioHeader{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    color:whitesmoke;
+}
+
+body{
+    background-color: #c8cbcf;
+    margin:0%;
+}
+#headerButtons{
+    padding: 1rem;
+}
+#subMenu{
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    margin:0%;
+    padding: 0.2%;
+}
+
+#notifButton, #userButton{
+    cursor:pointer;
+    background-color: transparent;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition-duration: 0.2s;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#notifButton:hover, #userButton:hover{
+    background-color: rgb(29, 29, 29);
+    color: white;
+}
+#iconeSino{
+    max-width: 2rem;
+}
+
+.subMenuButton{
+    color:black;
+    font-size: 0.95rem;
+    background-color: transparent;
+    border: none;
+    transition-duration: 0.25s;
+    cursor:pointer;
+}
+.subMenuButton:hover{
+    color:teal;
+}
+
+/*css do footer (padrão nas paginas)*/
+footer{
+    background-image: linear-gradient(to right, #566275, #aeccfc);
+    display: flex;
+    justify-content: center;
+    bottom:0;
+    /*
+    width: 100%;
+    position: fixed;
+    */
+}
+
+#Git{
+    /*background-image: url("/public/git.png");*/
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#siteAuthor{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.3rem;
+}

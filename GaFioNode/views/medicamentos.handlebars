@@ -1,7 +1,18 @@
 <div id="medicamentos">
         <div id="CadBusca">
-            <button onclick="window.location.href='/registrations/medicine/create'">Cadastrar medicamento</button>
-            <button>Buscar medicamento</button>
+            <div>
+                <button onclick="window.location.href='/registrations/medicine/create'" id="cadMed">Cadastrar medicamento</button>
+                <button id="buscaMed" onclick="gerencMenu()">Buscar medicamento</button>
+            </div>
+            <div id="searchDiv">
+                <input type="text" id="inptBusca" name="inptBusca">
+                <select id="atributos" name="atributos">
+                    <option value="Código" class="atrib">EAN</option>
+                    <option value="PrincípioAtivo" class="atrib">Princípio</option>
+                    <option value="ClasseTerapêutica" class="atrib">Classe</option>
+                </select>
+                <button id="submitBusca" onclick="procura()"> &#10003; </button>
+            </div>
         </div>
         <div id="tabela">
         <table>
@@ -17,7 +28,7 @@
                 <th class="tableHeader">Classe Terapêutica</th>
             </tr>
             {{#each medicamentos}}
-            <tr class="trData" onclick="">
+            <tr class="trData" onclick="openModal('{{dataValues.Código}}', '{{dataValues.PrincípioAtivo}}')">
                 <td>{{dataValues.Código}}</td>
                 <td>{{dataValues.PrincípioAtivo}}</td>
                 <td>{{dataValues.CNPJ}}</td>
@@ -29,5 +40,27 @@
             </tr>
             {{/each}}
         </table>
+        </div>
+        <div id="modal">
+            <div class="modal-content">
+                <span id="close" onclick="closeModal()">&times;</span>
+                <p id="EAN"></p>
+                <p id="Princ"></p>
+                <div id="buttonsUpdt">
+                    <button id="updtMed" onclick="atualizarRegistro()">Atualizar Medicamento</button>
+                    <button id="exclMed" onclick="openModal2()">Excluir Medicamento</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal2">
+            <div class="modal-content">
+                <span id="close2" onclick="closeModal2()">&times;</span>
+                <h2>Exclusão de medicamento</h2>
+                <p id="ctzEAN"></p>
+                <div id="buttonsUpdt">
+                    <button id="ctzNao" onclick="closeModal2()">Cancelar</button>
+                    <button id="ctzSim" onclick="deletarRegistro()">Excluir</button>
+                </div>
+            </div>
         </div>
     </div>

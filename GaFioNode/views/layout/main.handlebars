@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/public/favicon.ico">
+    <link rel="icon" href="/public/favicon2.ico">
     <script src="/public/script/{{script}}" async></script>
     <link rel="stylesheet" href="/public/css/{{style}}">
+    <link rel="stylesheet" href="/public/css/mainStyle.css">
     <title>GAFio</title>
 </head>
 <body>
@@ -15,11 +16,12 @@
         <div id="gafioHeader">
             <p>GAFio</p>
         </div>
-        <div>
-            <button>Notificações</button>
-            <button>Usuário</button>
+        <div id="headerButtons">
+            <button id="notifButton">Notificações</button>
+            <button id="userButton">Usuário</button>
         </div>
 	</header>
+    <!-- submenu -->
     <div id="subMenu">
         <button class = "subMenuButton" id="backButton"> <- </button>
         <button class = "subMenuButton">HOME</button>
@@ -31,5 +33,13 @@
         <button class = "subMenuButton">HISTÓRICO</button>
     </div>
     {{{body}}}
+    <!-- <br><br><br><br><br><br> -->
+    <br><br>
+    <footer>
+        <p id="siteAuthor">Amauri P. - 2021</p>
+        <button id="Git" onclick="window.open('https://github.com/esquilor', '_blank');">
+            <img src="/public/git.png" width="43px" height= "43px">
+        </button>
+    </footer>
 </body>
 </html>
